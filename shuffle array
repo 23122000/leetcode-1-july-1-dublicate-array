@@ -1,0 +1,25 @@
+class Solution {
+public:
+    vector<int> shuffle(vector<int>& nums, int n) {
+        int t = nums.size();
+        vector<int> a(2 * n, 0);
+        vector<int> b(n, 0);
+        
+        for (int i = 0; i < n; i++) {
+            b[i] = nums[i];
+        }
+        
+        int j = 0;
+        for (int i = 0; i < t; i++) {
+            if (i % 2 == 0) {
+                a[i] = b[j];
+                j++;
+            } else {
+                a[i] = nums[n];
+                n++;
+            }
+        }
+        
+        return a;
+    }
+};
