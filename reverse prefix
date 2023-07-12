@@ -1,0 +1,15 @@
+
+    def reversePrefix(self, word, ch):
+        """
+        :type word: str
+        :type ch: str
+        :rtype: str
+        """
+        i=word.find(ch)
+        if(i!=-1):
+            l=list(word[0:i+1])
+            l.reverse()
+            return ''.join(l)+word[i+1:]
+        else:
+            return word
+    
